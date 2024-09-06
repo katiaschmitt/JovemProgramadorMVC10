@@ -23,5 +23,16 @@ namespace JovemProgramadorMVC10.Data.Repositorio
             _bancoContexto.Aluno.Add(aluno);    
             _bancoContexto.SaveChanges();   
         }
+
+        public Aluno BuscarId(int id)
+        {
+            return _bancoContexto.Aluno.FirstOrDefault(x => x.Id == id);
+        }
+
+        public void EditarAluno(Aluno aluno)
+        {
+            _bancoContexto.Aluno.Update(aluno);
+            _bancoContexto.SaveChanges();
+        }
     }
 }
