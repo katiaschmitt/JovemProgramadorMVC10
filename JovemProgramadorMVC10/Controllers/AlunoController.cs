@@ -49,5 +49,12 @@ namespace JovemProgramadorMVC10.Controllers
             _alunoRepositorio.EditarAluno(aluno);
             return RedirectToAction("Index");
         }
+
+        public IActionResult Excluir(Aluno aluno)
+        {
+            _alunoRepositorio.ExcluirAluno(aluno);
+            return RedirectToAction("Index");
+        }
+
     }
 }
