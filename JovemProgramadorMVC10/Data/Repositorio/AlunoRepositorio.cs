@@ -15,13 +15,13 @@ namespace JovemProgramadorMVC10.Data.Repositorio
 
         public List<Aluno> BuscarAlunos()
         {
+
             return _bancoContexto.Aluno.ToList();
         }
 
         public void InserirAluno(Aluno aluno)
         {
-            _bancoContexto.Aluno.Add(aluno);    
-            _bancoContexto.SaveChanges();   
+            _bancoContexto.Aluno.Add(aluno);
         }
 
         public Aluno BuscarId(int id)
@@ -31,6 +31,7 @@ namespace JovemProgramadorMVC10.Data.Repositorio
 
         public void EditarAluno(Aluno aluno)
         {
+
             _bancoContexto.Aluno.Update(aluno);
             _bancoContexto.SaveChanges();
         }

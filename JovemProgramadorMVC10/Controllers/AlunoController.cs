@@ -14,6 +14,8 @@ namespace JovemProgramadorMVC10.Controllers
         public IActionResult Index()
         {
             var aluno = _alunoRepositorio.BuscarAlunos();
+
+            
             return View(aluno);
         }
 
@@ -41,7 +43,6 @@ namespace JovemProgramadorMVC10.Controllers
         {
             var aluno = _alunoRepositorio.BuscarId(id);
             return View(aluno);
-
         }
 
         public IActionResult EditarAluno(Aluno aluno)
