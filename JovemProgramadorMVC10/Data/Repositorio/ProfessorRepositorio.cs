@@ -22,6 +22,7 @@ namespace JovemProgramadorMVC10.Data.Repositorio
         public void InserirProfessor(Professor Professor)
         {
             _bancoContexto.Professor.Add(Professor);
+            _bancoContexto.SaveChanges();
         }
 
         public Professor BuscarId(int id)

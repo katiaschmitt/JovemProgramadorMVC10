@@ -2,12 +2,12 @@
 
 namespace JovemProgramadorMVC10.Data.Repositorio.Interfaces
 {
-    public interface IProfessorRepositorio
+    public interface IAlunoRepositorio
     {
-        List<Professor> BuscarProfessores();
-        void InserirProfessor(Professor Professor);
-        Professor BuscarId(int id);
-        void EditarProfessor(Professor Professor);
-        void ExcluirProfessor(Professor Professor);
+        List<Aluno> BuscarAlunos();
+        void InserirAluno(Aluno aluno);
+        Aluno BuscarId(int id);
+        void EditarAluno(Aluno aluno);
+        void ExcluirAluno(Aluno aluno);
     }
 }

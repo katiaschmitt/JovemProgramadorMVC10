@@ -1,4 +1,33 @@
-﻿@{
-    Layout = "_LayoutProfessor";
-}
-<p>TESTE</p>
+﻿@model List<Professor>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Nome</th>
+            <th scope="col">Email</th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model != null && Model.Any())
+        {
+            foreach (Professor professor in Model)
+            {
+                <tr>
+                    <td>@professor.Nome </td>
+                    <td>@professor.Email </td>
+                    <td>
+                        <div class="d-grid gap-2 d-md-block">
+                            <a type="submit" class="btn btn-primary" role="button" asp-controller="Professor" asp-action="Editar" asp-route-id="@professor.Id">Editar</a>
+                            <a type="submit" class="btn btn-primary" role="button" asp-controller="Professor" asp-action="Excluir" asp-route-id="@professor.Id">Excluir</a>
+                        </div>
+                    </td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>
+
+<div class="text-center">
+    <a class="btn btn-primary" type="button" asp-controller="Professor" asp-action="AdicionarProfessor"> Adicionar Professor</a>
+    <a class="btn btn-primary" type="button" asp-controller="Home" asp-action="Index"> Voltar</a>
+</div>
