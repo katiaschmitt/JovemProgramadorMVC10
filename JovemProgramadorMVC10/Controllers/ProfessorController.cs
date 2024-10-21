@@ -38,5 +38,28 @@ namespace JovemProgramadorMVC10.Controllers
 
             return RedirectToAction("Index");
         }
+        public IActionResult Editar(int id)
+        {
+            var aluno = _professorRepositorio.BuscarId(id);
+            return View(aluno);
+        }
+
+        public IActionResult EditarProfessor(Professor professor)
+        {
+            _professorRepositorio.EditarProfessor(professor);
+            return RedirectToAction("Index");
+        }
+
+        public IActionResult Excluir(Professor professor)
+        {
+            _professorRepositorio.ExcluirProfessor(professor);
+            return RedirectToAction("Index");
+        }
+
+        public IActionResult AlunosdoProfessor(int id)
+        {
+            var relatorio = _professorRepositorio.BuscarAlunos(id);
+            return View(relatorio);
+        }
     }
 }

@@ -42,5 +42,23 @@ namespace JovemProgramadorMVC10.Data.Repositorio
             _bancoContexto.Professor.Remove(Professor);
             _bancoContexto.SaveChanges();
         }
+        public List<RelatorioAlunosDto> BuscarAlunos(int idProfessor)
+        {
+            var Alunos = _bancoContexto.Aluno.ToList().Where(x=> x.IdProfessor == idProfessor);
+
+            List<RelatorioAlunosDto> relatorioAlunos = new();
+
+            foreach (var item in Alunos)
+            {
+                RelatorioAlunosDto relatorioAlunosDto = new()
+                {
+                    Aluno = item
+                };
+                relatorioAlunos.Add(relatorioAlunosDto);    
+            }
+
+            return relatorioAlunos;
+
+        }
     }
 }

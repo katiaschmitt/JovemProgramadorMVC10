@@ -11,7 +11,12 @@ namespace JovemProgramadorMVC10.Controllers
         {
             _usuarioRepositorio = usuarioRepositorio;
         }
-        public IActionResult Index(Usuario usuario)
+
+        public IActionResult Index()
+        {
+            return View();
+        }
+        public IActionResult ValidaUsuario(Usuario usuario)
         {
             try
             {
