@@ -44,15 +44,15 @@ namespace JovemProgramadorMVC10.Data.Repositorio
         }
         public List<RelatorioAlunosViewModel> BuscarAlunos(int idProfessor)
         {
-            var Alunos = _bancoContexto.Aluno.ToList().Where(x=> x.IdProfessor == idProfessor);
+            var alunos = _bancoContexto.Aluno.ToList().Where(x=> x.IdProfessor == idProfessor);
 
             List<RelatorioAlunosViewModel> relatorioAlunos = new();
 
-            foreach (var item in Alunos)
+            foreach (var aluno in alunos)
             {
                 RelatorioAlunosViewModel relatorioAlunosViewModel = new()
                 {
-                    Aluno = item,
+                    Aluno = aluno,
                     DataInicio = DateOnly.Parse("2024-01-10"),
                     DataFim = DateOnly.Parse("2024-12-10")
                 };
