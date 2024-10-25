@@ -9,6 +9,6 @@ namespace JovemProgramadorMVC10.Data.Repositorio.Interfaces
         Professor BuscarId(int id);
         void EditarProfessor(Professor Professor);
         void ExcluirProfessor(Professor Professor);
-        List<RelatorioAlunosDto> BuscarAlunos(int idProfessor);
+        List<RelatorioAlunosViewModel> BuscarAlunos(int idProfessor);
     }
 }

@@ -1,20 +1,24 @@
-﻿@model List<RelatorioAlunosDto>
+﻿@model List<RelatorioAlunosViewModel>
 
 <table class="table">
     <thead>
         <tr>
             <th scope="col">Nome</th>
             <th scope="col">Cpf</th>
+            <th scope="col">Início do Curso</th>
+            <th scope="col">Término do Curso</th>
         </tr>
     </thead>
     <tbody>
         @if (Model != null && Model.Any())
         {
-            foreach (RelatorioAlunosDto aluno in Model)
+            foreach (RelatorioAlunosViewModel relatorio in Model)
             {
                 <tr>
-                    <td>@aluno.Aluno.Nome </td>
-                    <td>@aluno.Aluno.Cpf </td>
+                    <td>@relatorio.Aluno.Nome </td>
+                    <td>@relatorio.Aluno.Cpf </td>
+                    <td>@relatorio.DataInicio </td>
+                    <td>@relatorio.DataFim </td>
                 </tr>
             }
         }

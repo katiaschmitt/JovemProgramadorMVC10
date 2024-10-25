@@ -1,6 +1,6 @@
 ﻿namespace JovemProgramadorMVC10.Models
 {
-    public class RelatorioAlunosDto
+    public class RelatorioAlunosViewModel
     {
         public Aluno Aluno { get; set; }
         public DateOnly DataInicio { get; set; }
