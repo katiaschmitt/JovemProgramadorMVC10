@@ -21,6 +21,7 @@ namespace JovemProgramadorMVC10.Data.Repositorio
 
         public void InserirAluno(Aluno aluno)
         {
+            aluno.IdProfessor = 1;
             _bancoContexto.Aluno.Add(aluno);
             _bancoContexto.SaveChanges();
         }
