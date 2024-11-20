@@ -4,10 +4,10 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace JovemProgramadorMVC10.Controllers
 {
-    public class LoginController : Controller
+    public class UsuarioController : Controller
     {
         private readonly IUsuarioRepositorio _usuarioRepositorio;
-        public LoginController(IUsuarioRepositorio usuarioRepositorio)
+        public UsuarioController(IUsuarioRepositorio usuarioRepositorio)
         {
             _usuarioRepositorio = usuarioRepositorio;
         }
@@ -35,6 +35,30 @@ namespace JovemProgramadorMVC10.Controllers
             {
 
                 TempData["MsgErro"] = "Erro ao buscar dados do usuário";
+            }
+
+            return View("Index");
+
+        }
+
+        public IActionResult Cadastro(Usuario usuario)
+        {
+            return View();
+
+        }
+        public IActionResult CadastrarUsuario(Usuario usuario)
+        {
+            try
+            {
+                _usuarioRepositorio.CadastrarUsuario(usuario);
+
+                 return RedirectToAction("Index", "Usuario");            
+           
+            }
+            catch (Exception)
+            {
+
+                TempData["MsgErro"] = "Erro ao cadastrar usuário";
             }
 
             return View("Index");

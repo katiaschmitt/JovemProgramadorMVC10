@@ -1,4 +1,6 @@
-﻿namespace JovemProgramadorMVC10.Models
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace JovemProgramadorMVC10.Models
 {
     public class Usuario
     {

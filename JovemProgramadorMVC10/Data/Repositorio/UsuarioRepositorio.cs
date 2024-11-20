@@ -17,5 +17,10 @@ namespace JovemProgramadorMVC10.Data.Repositorio
         {
             return _bancoContexto.Usuario.FirstOrDefault(x => x.Email == usuario.Email && x.Senha == usuario.Senha);
         }
+        public void CadastrarUsuario(Usuario usuario)
+        {
+            _bancoContexto.Usuario.Add(usuario);
+            _bancoContexto.SaveChanges();
+        }
     }
 }
